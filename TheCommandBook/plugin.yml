@@ -29,3 +29,11 @@ commands:
       description: Teleports a specified player to you.
       permission: tcb.tphere
       usage: /tphere playerName
+   setwarp:
+      description: Sets a warp at your location.
+      permission: tcb.setwarp
+      usage: /setwarp warpName
+   warp:
+      description: Warps to a specified warp.
+      permission: tcb.warp
+      usage: /warp warpName
