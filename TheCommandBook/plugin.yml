@@ -21,3 +21,11 @@ commands:
       description: Teleports you to your home location.
       permission: tcb.home
       usage: /home
+   tp:
+      description: Teleports you to the specified player.
+      permission: tcb.tp
+      usage: /tp playerName
+   tphere:
+      description: Teleports a specified player to you.
+      permission: tcb.tphere
+      usage: /tphere playerName
