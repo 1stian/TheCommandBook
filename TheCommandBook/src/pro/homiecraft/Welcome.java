@@ -43,7 +43,7 @@ public class Welcome implements Listener {
 			player.sendMessage(welcomeMessage);
 		}
 		
-		File playerDir = new File ("plugins/TheCommandBook/playerdata");
+		File playerDir = new File (TheCommandBook.pluginST.getDataFolder() + "/playerdata");
 		if (!playerDir.exists()){
 			playerDir.mkdir();
 		}
