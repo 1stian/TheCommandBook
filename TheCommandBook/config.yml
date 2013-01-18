@@ -1,0 +1,5 @@
+TheCommandBook:
+  Welcome:
+    Enable-first-time-welcome-message: true
+    Enable-welcome-message: true
+    Welcome-Message: Welcome to this server!

@@ -1,0 +1,15 @@
+name: TheCommandBook
+main: pro.homiecraft.TheCommandBook
+version: 1.0
+author: GudfareN
+website: homiecraft.pro
+
+commands:
+   setspawn:
+      description: Set world spawn location to your current location.
+      permission: tcb.Setspawn
+      usage: /setspawn'
+   spawn:
+      description: Teleports you to the current world spawn.
+      permission: tcb.spawn
+      usage: /spawn
