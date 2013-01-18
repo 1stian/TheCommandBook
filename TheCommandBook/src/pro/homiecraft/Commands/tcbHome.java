@@ -20,8 +20,12 @@ public class tcbHome implements CommandExecutor {
 				int x = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".X");
 				int y = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".Y");
 				int z = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".Z");
+				float yaw = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".yaw");
+				float pitch = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".pitch");
 				
 				Location home = new Location(Bukkit.getWorld(cworld), x, y, z);
+				player.getLocation().setPitch(pitch);
+				player.getLocation().setYaw(yaw);
 				player.teleport(home);
 				player.sendMessage("You teleported home!");
 				return true;

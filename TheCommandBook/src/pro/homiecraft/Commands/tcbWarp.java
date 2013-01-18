@@ -36,8 +36,12 @@ public class tcbWarp implements CommandExecutor {
 						int x = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".X");
 						int y = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".Y");
 						int z = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".Z");
+						float yaw = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".yaw");
+						float pitch = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".pitch");
 						
 						Location warp = new Location(Bukkit.getWorld(cworld), x, y, z);
+						player.getLocation().setPitch(pitch);
+						player.getLocation().setYaw(yaw);
 						player.teleport(warp);
 						
 						player.sendMessage("Warping to: " + args[0]);

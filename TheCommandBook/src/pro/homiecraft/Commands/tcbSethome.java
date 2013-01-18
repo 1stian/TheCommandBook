@@ -17,11 +17,15 @@ public class tcbSethome implements CommandExecutor {
 				int x = player.getLocation().getBlockX();
 				int y = player.getLocation().getBlockY();
 				int z = player.getLocation().getBlockZ();
+				float yaw = player.getLocation().getYaw();
+				float pitch = player.getLocation().getPitch();
 				
 				playerConfig.reloadPlayerConfig(player.getName());
 				playerConfig.getPlayerConfig(player.getName()).set(player.getName() + ".Home." + cworld + ".X", x);
 				playerConfig.getPlayerConfig(player.getName()).set(player.getName() + ".Home." + cworld + ".Y", y);
 				playerConfig.getPlayerConfig(player.getName()).set(player.getName() + ".Home." + cworld + ".Z", z);
+				playerConfig.getPlayerConfig(player.getName()).set(player.getName() + ".Home." + cworld + ".yaw", yaw);
+				playerConfig.getPlayerConfig(player.getName()).set(player.getName() + ".Home." + cworld + ".pitch", pitch);
 				playerConfig.savePlayerConfig(player.getName());
 				playerConfig.reloadPlayerConfig(player.getName());
 				

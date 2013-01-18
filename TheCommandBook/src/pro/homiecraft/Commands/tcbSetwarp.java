@@ -30,6 +30,8 @@ public class tcbSetwarp implements CommandExecutor {
 					int x = player.getLocation().getBlockX();
 					int y = player.getLocation().getBlockY();
 					int z = player.getLocation().getBlockZ();
+					float yaw = player.getLocation().getYaw();
+					float pitch = player.getLocation().getPitch();
 					
 					File warpFile = new File(TheCommandBook.pluginST.getDataFolder() + "/data/warps/" + args[0] + ".yml");
 					if (!warpFile.exists()){
@@ -38,6 +40,8 @@ public class tcbSetwarp implements CommandExecutor {
 						warpConfig.getWarpConfig(args[0]).set(args[0] + "." + cworld + ".X", x);
 						warpConfig.getWarpConfig(args[0]).set(args[0] + "." + cworld + ".Y", y);
 						warpConfig.getWarpConfig(args[0]).set(args[0] + "." + cworld + ".Z", z);
+						warpConfig.getWarpConfig(args[0]).set(args[0] + "." + cworld + ".yaw", yaw);
+						warpConfig.getWarpConfig(args[0]).set(args[0] + "." + cworld + ".pitch", pitch);
 						warpConfig.saveWarpConfig(args[0]);
 						warpConfig.reloadWarpConfig(args[0]);
 						
