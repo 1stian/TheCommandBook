@@ -18,7 +18,6 @@ public class TheCommandBook extends JavaPlugin{
 	}
 	
 	public void onEnable() {
-		//Test
 		//Updater updater = new Updater(this, "TheCommandBook", this.getFile(), Updater.UpdateType.DEFAULT, false);
 		
 		PluginManager pm = getServer().getPluginManager();
