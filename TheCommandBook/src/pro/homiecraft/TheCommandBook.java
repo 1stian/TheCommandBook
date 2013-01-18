@@ -22,6 +22,8 @@ public class TheCommandBook extends JavaPlugin{
 		
 		PluginManager pm = getServer().getPluginManager();
 			pm.registerEvents(new Welcome(), this);
+			
+		TheCommandBook.pluginST = this;
 		
 		loadConfiguration();
 		getCommand(this);
@@ -33,6 +35,10 @@ public class TheCommandBook extends JavaPlugin{
 	}
 	
 	public void loadConfiguration() {
+		if(!getDataFolder().exists()){
+			getDataFolder().mkdir();
+			}		
+		
 		this.getConfig().options().copyDefaults(true);
 		this.saveConfig();
 		this.reloadConfig();

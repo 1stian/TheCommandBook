@@ -48,7 +48,7 @@ public class Welcome implements Listener {
 			playerDir.mkdir();
 		}
 		
-		File playerfile = new File("plugins/TheCommandBook/playerdata/" + player.getName() + ".yml");
+		File playerfile = new File(TheCommandBook.pluginST.getDataFolder() + "/playerdata/" + player.getName() + ".yml");
 		if(!player.hasPlayedBefore() || !playerfile.exists()) {
 			//playerfile.createNewFile();
 			playerConfig.reloadPlayerConfig(player.getName());
