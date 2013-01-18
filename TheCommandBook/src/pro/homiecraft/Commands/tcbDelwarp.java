@@ -3,12 +3,13 @@ package pro.homiecraft.Commands;
 import java.io.File;
 
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pro.homiecraft.TheCommandBook;
 
-public class tcbDelwarp {
+public class tcbDelwarp implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if (sender.hasPermission("tcb.delwarp")) {
 			if (cmd.getName().equalsIgnoreCase("delwarp")) {
