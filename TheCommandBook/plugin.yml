@@ -13,3 +13,11 @@ commands:
       description: Teleports you to the current world spawn.
       permission: tcb.spawn
       usage: /spawn
+   sethome:
+      description: Set your current location as your home.
+      permission: tcb.Sethome
+      usage: /sethome
+   home:
+      description: Teleports you to your home location.
+      permission: tcb.home
+      usage: /home

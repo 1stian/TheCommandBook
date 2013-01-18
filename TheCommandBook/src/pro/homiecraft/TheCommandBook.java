@@ -32,6 +32,8 @@ public class TheCommandBook extends JavaPlugin{
 	private void getCommand(TheCommandBook theCommandBook) {
 		this.getCommand("setspawn").setExecutor(new tcbSetSpawn());
 		this.getCommand("spawn").setExecutor(new tcbSpawn());
+		this.getCommand("sethome").setExecutor(new tcbSethome());
+		this.getCommand("home").setExecutor(new tcbHome());
 	}
 	
 	public void loadConfiguration() {
