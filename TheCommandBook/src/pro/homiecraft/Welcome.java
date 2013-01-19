@@ -58,7 +58,7 @@ public class Welcome implements Listener {
 		}
 		
 		playerConfig.reloadPlayerConfig(player.getName());
-		Boolean muted = playerConfig.getPlayerConfig(player.getName()).getBoolean("muted");
+		Boolean muted = playerConfig.getPlayerConfig(player.getName()).getBoolean("muted", false);
 		
 		if (muted == true){
 			muteMap.mu.put(player, "mute");

@@ -23,6 +23,7 @@ public class TheCommandBook extends JavaPlugin{
 		PluginManager pm = getServer().getPluginManager();
 			pm.registerEvents(new Welcome(), this);
 			pm.registerEvents(new Chat(), this);
+			//pm.registerEvents(new Damage(), this);
 			
 		TheCommandBook.pluginST = this;
 		
@@ -42,12 +43,13 @@ public class TheCommandBook extends JavaPlugin{
 		this.getCommand("delwarp").setExecutor(new tcbDelwarp());
 		this.getCommand("warps").setExecutor(new tcbWarps());
 		this.getCommand("mute").setExecutor(new tcbMute());
+		//this.getCommand("god").setExecutor(new tcbGod());
 	}
 	
 	public void loadConfiguration() {
 		if(!getDataFolder().exists()){
 			getDataFolder().mkdir();
-			}		
+		}		
 		
 		this.getConfig().options().copyDefaults(true);
 		this.saveConfig();
