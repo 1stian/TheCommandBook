@@ -73,3 +73,7 @@ commands:
       description: Change the weather
       permission: tcb.weather
       usage: /weather sun|rain
+   gm:
+      description: Change gamemode for you or another player
+      permission: tcb.gm
+      usage: /gm <playerName>
