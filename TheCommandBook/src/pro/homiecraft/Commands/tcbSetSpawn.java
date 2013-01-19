@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import pro.homiecraft.Config.spawnConfig;
 
 public class tcbSetSpawn implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -13,14 +14,27 @@ public class tcbSetSpawn implements CommandExecutor {
 				Player player = (Player) sender;
 				World world = player.getWorld();
 				
-				int x = player.getLocation().getBlockX();
-				int y = player.getLocation().getBlockY();
-				int z = player.getLocation().getBlockZ();
-				//float yaw = player.getLocation().getYaw();
-				//String cworld = player.getWorld().getName();
-				//Location spawn = new Location(Bukkit.getWorld(cworld), x, y, z);
+				double x = player.getLocation().getX();
+				double y = player.getLocation().getY();
+				double z = player.getLocation().getZ();
+				float yaw = player.getLocation().getYaw();
+				float pitch = player.getLocation().getPitch();
+				String cworld = player.getWorld().getName();
 				
-				world.setSpawnLocation(x,y,z);
+				spawnConfig.reloadSpawnConfig("spawn");
+				spawnConfig.getSpawnConfig("spawn").set(cworld + ".spawn.X", x);
+				spawnConfig.getSpawnConfig("spawn").set(cworld + ".spawn.Y", y);
+				spawnConfig.getSpawnConfig("spawn").set(cworld + ".spawn.Z", z);
+				spawnConfig.getSpawnConfig("spawn").set(cworld + ".spawn.yaw", yaw);
+				spawnConfig.getSpawnConfig("spawn").set(cworld + ".spawn.pitch", pitch);
+				spawnConfig.saveSpawnConfig("spawn");
+				spawnConfig.reloadSpawnConfig("spawn");
+				
+				int xI = (int)x;
+				int yI = (int)y;
+				int zI = (int)z;
+				
+				world.setSpawnLocation(xI, yI, zI);
 				sender.sendMessage("Spawn is set to your current location!");
 				return true;
 			}

@@ -17,15 +17,16 @@ public class tcbHome implements CommandExecutor {
 				
 				String cworld = player.getWorld().getName();
 				
-				int x = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".X");
-				int y = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".Y");
-				int z = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".Z");
-				float yaw = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".yaw");
-				float pitch = playerConfig.getPlayerConfig(player.getName()).getInt(player.getName() + ".Home." + cworld + ".pitch");
+				double x = playerConfig.getPlayerConfig(player.getName()).getDouble(player.getName() + ".Home." + cworld + ".X");
+				double y = playerConfig.getPlayerConfig(player.getName()).getDouble(player.getName() + ".Home." + cworld + ".Y");
+				double z = playerConfig.getPlayerConfig(player.getName()).getDouble(player.getName() + ".Home." + cworld + ".Z");
+				double yaw = playerConfig.getPlayerConfig(player.getName()).getDouble(player.getName() + ".Home." + cworld + ".yaw");
+				double pitch = playerConfig.getPlayerConfig(player.getName()).getDouble(player.getName() + ".Home." + cworld + ".pitch");
 				
-				Location home = new Location(Bukkit.getWorld(cworld), x, y, z);
-				player.getLocation().setPitch(pitch);
-				player.getLocation().setYaw(yaw);
+				float yawF = (float) yaw;
+				float pitchF = (float) pitch;
+				
+				Location home = new Location(Bukkit.getWorld(cworld), x, y, z, yawF, pitchF);
 				player.teleport(home);
 				player.sendMessage("You teleported home!");
 				return true;

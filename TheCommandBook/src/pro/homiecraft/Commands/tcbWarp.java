@@ -33,16 +33,17 @@ public class tcbWarp implements CommandExecutor {
 					if (warpFile.exists()){
 						warpConfig.reloadWarpConfig(args[0]);
 						
-						int x = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".X");
-						int y = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".Y");
-						int z = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".Z");
-						float yaw = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".yaw");
-						float pitch = warpConfig.getWarpConfig(args[0]).getInt(args[0] + "." + cworld + ".pitch");
+						double x = warpConfig.getWarpConfig(args[0]).getDouble(args[0] + "." + cworld + ".X");
+						double y = warpConfig.getWarpConfig(args[0]).getDouble(args[0] + "." + cworld + ".Y");
+						double z = warpConfig.getWarpConfig(args[0]).getDouble(args[0] + "." + cworld + ".Z");
+						double yaw = warpConfig.getWarpConfig(args[0]).getDouble(args[0] + "." + cworld + ".yaw");
+						double pitch = warpConfig.getWarpConfig(args[0]).getDouble(args[0] + "." + cworld + ".pitch");
 						
-						Location warp = new Location(Bukkit.getWorld(cworld), x, y, z);
+						float yawF = (float) yaw;
+						float pitchF = (float) pitch;
+						
+						Location warp = new Location(Bukkit.getWorld(cworld), x, y, z, yawF, pitchF);
 						player.teleport(warp);
-						player.getLocation().setPitch(pitch);
-						player.getLocation().setYaw(yaw);
 						
 						player.sendMessage("Warping to: " + args[0]);
 						return true;

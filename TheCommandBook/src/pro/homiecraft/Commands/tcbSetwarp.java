@@ -27,9 +27,9 @@ public class tcbSetwarp implements CommandExecutor {
 					
 					String cworld = player.getWorld().getName();
 					
-					int x = player.getLocation().getBlockX();
-					int y = player.getLocation().getBlockY();
-					int z = player.getLocation().getBlockZ();
+					double x = player.getLocation().getX();
+					double y = player.getLocation().getY();
+					double z = player.getLocation().getZ();
 					float yaw = player.getLocation().getYaw();
 					float pitch = player.getLocation().getPitch();
 					
