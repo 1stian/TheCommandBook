@@ -44,6 +44,8 @@ public class TheCommandBook extends JavaPlugin{
 		this.getCommand("warps").setExecutor(new tcbWarps());
 		this.getCommand("mute").setExecutor(new tcbMute());
 		this.getCommand("kick").setExecutor(new tcbKick());
+		this.getCommand("ban").setExecutor(new tcbBan());
+		this.getCommand("unban").setExecutor(new tcbUnban());
 		//this.getCommand("god").setExecutor(new tcbGod());
 	}
 	

@@ -52,4 +52,12 @@ commands:
    kick:
       description: Kick a specified player.
       permission: tcb.kick
-      usage: /kick playerName
+      usage: /kick playerName <reason>
+   ban:
+      description: Ban a specified player.
+      permission: tcb.ban
+      usage: /ban playerName <reason>
+   unban:
+      description: Unban a specified player.
+      permission: tcb.unban
+      usage: /unban playerName
