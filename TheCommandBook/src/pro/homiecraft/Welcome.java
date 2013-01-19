@@ -51,7 +51,6 @@ public class Welcome implements Listener {
 		
 		File playerfile = new File(TheCommandBook.pluginST.getDataFolder() + "/playerdata/" + player.getName() + ".yml");
 		if(!player.hasPlayedBefore() || !playerfile.exists()) {
-			//playerfile.createNewFile();
 			playerConfig.reloadPlayerConfig(player.getName());
 			playerConfig.getPlayerConfig(player.getName()).set("Name", player.getName());
 			playerConfig.savePlayerConfig(player.getName());
@@ -62,7 +61,7 @@ public class Welcome implements Listener {
 		Boolean muted = playerConfig.getPlayerConfig(player.getName()).getBoolean("muted");
 		
 		if (muted == true){
-			muteMap.mu.put(event.getPlayer(), "mute");
+			muteMap.mu.put(player, "mute");
 		}else{
 			muteMap.mu.remove(player);
 		}
