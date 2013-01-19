@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import pro.homiecraft.Commands.Resources.muteMap;
 import pro.homiecraft.Config.playerConfig;
 
 public class Welcome implements Listener {
@@ -52,11 +53,20 @@ public class Welcome implements Listener {
 		if(!player.hasPlayedBefore() || !playerfile.exists()) {
 			//playerfile.createNewFile();
 			playerConfig.reloadPlayerConfig(player.getName());
-			playerConfig.getPlayerConfig(player.getName()).addDefault("muted", false);
 			playerConfig.getPlayerConfig(player.getName()).set("Name", player.getName());
 			playerConfig.savePlayerConfig(player.getName());
 			playerConfig.reloadPlayerConfig(player.getName());
 		}
+		
+		playerConfig.reloadPlayerConfig(player.getName());
+		Boolean muted = playerConfig.getPlayerConfig(player.getName()).getBoolean("muted");
+		
+		if (muted == true){
+			muteMap.mu.put(event.getPlayer(), "mute");
+		}else{
+			muteMap.mu.remove(player);
+		}
+		
 	}
 	
 }

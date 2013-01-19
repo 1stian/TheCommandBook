@@ -45,3 +45,7 @@ commands:
       description: List all warps
       permission: tcb.warps
       usage: /warps
+   mute:
+      description: Mute a specified player.
+      permission: tcb.mute
+      usage: /mute playerName
