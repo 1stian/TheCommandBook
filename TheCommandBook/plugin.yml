@@ -41,3 +41,7 @@ commands:
       description: Delete a specified warp.
       permission: tcb.delwarp
       usage: /delwarp warpName
+   warps:
+      description: List all warps
+      permission: tcb.warps
+      usage: /warps

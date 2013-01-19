@@ -39,6 +39,7 @@ public class TheCommandBook extends JavaPlugin{
 		this.getCommand("setwarp").setExecutor(new tcbSetwarp());
 		this.getCommand("warp").setExecutor(new tcbWarp());
 		this.getCommand("delwarp").setExecutor(new tcbDelwarp());
+		this.getCommand("warps").setExecutor(new tcbWarps());
 	}
 	
 	public void loadConfiguration() {
