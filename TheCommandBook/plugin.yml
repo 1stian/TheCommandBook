@@ -65,3 +65,11 @@ commands:
       description: Msg a specified player.
       permission: tcb.msg
       usage: /msg playerName <message>
+   time:
+      description: Change day night
+      permission: tcb.time
+      usage: /time day|night
+   weather:
+      description: Change the weather
+      permission: tcb.weather
+      usage: /weather sun|rain
