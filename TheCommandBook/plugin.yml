@@ -49,3 +49,7 @@ commands:
       description: Mute a specified player.
       permission: tcb.mute
       usage: /mute playerName
+   kick:
+      description: Kick a specified player.
+      permission: tcb.kick
+      usage: /kick playerName
