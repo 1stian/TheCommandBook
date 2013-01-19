@@ -61,3 +61,7 @@ commands:
       description: Unban a specified player.
       permission: tcb.unban
       usage: /unban playerName
+   msg:
+      description: Msg a specified player.
+      permission: tcb.msg
+      usage: /msg playerName <message>
