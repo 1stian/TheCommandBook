@@ -22,6 +22,7 @@ public class TheCommandBook extends JavaPlugin{
 		
 		PluginManager pm = getServer().getPluginManager();
 			pm.registerEvents(new Welcome(), this);
+			pm.registerEvents(new Chat(), this);
 			
 		TheCommandBook.pluginST = this;
 		
