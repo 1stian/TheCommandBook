@@ -26,9 +26,13 @@ public class Damage implements Listener {
 	}
 	@EventHandler
 	public void onBlockDamage(EntityDamageEvent event){
+		Entity player = event.getEntity();
+		
 		event.getCause();
-		if(event.getCause() == DamageCause.FALL){
-			event.setCancelled(true);
+		if(damageMap.dmg.containsKey(player)){
+			if(event.getCause() == DamageCause.FALL){
+				event.setCancelled(true);
+			}
 		}
 	}
 }
