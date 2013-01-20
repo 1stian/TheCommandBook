@@ -77,3 +77,7 @@ commands:
       description: Change gamemode for you or another player
       permission: tcb.gm
       usage: /gm <playerName>
+   god:
+      description: God a player
+      permission: tcb.god
+      usage: /god <playerName>

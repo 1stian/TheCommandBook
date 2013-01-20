@@ -24,16 +24,6 @@ public class tcbWarps implements CommandExecutor {
 				}
 				String msg = sb.toString().trim();
 				sender.sendMessage("Warps: " + msg.replace(".yml", ""));
-				
-//                for (int i = 0; i < fileNames.length; i++) {
-//                  String[] tnt = fileNames[i].split(".");
-//                  
-//                  if(tnt.length == 1){
-//                	targetNames.add(tnt[0]);
-//                    sender.sendMessage("Warps: " + tnt[0]);
-//                    return true;
-//                  }                  
-//                }
                 return true;
 			}
 		}

@@ -23,7 +23,7 @@ public class TheCommandBook extends JavaPlugin{
 		PluginManager pm = getServer().getPluginManager();
 			pm.registerEvents(new Welcome(), this);
 			pm.registerEvents(new Chat(), this);
-			//pm.registerEvents(new Damage(), this);
+			pm.registerEvents(new Damage(), this);
 			
 		TheCommandBook.pluginST = this;
 		
@@ -50,7 +50,7 @@ public class TheCommandBook extends JavaPlugin{
 		this.getCommand("time").setExecutor(new tcbTime());
 		this.getCommand("weather").setExecutor(new tcbWeather());
 		this.getCommand("gm").setExecutor(new tcbGm());
-		//this.getCommand("god").setExecutor(new tcbGod());
+		this.getCommand("god").setExecutor(new tcbGod());
 	}
 	
 	public void loadConfiguration() {
