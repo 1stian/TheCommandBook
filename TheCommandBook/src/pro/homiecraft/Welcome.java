@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import pro.homiecraft.Commands.Resources.damageMap;
 import pro.homiecraft.Commands.Resources.muteMap;
+import pro.homiecraft.Commands.Resources.timePlayedMap;
 import pro.homiecraft.Config.playerConfig;
 
 public class Welcome implements Listener {
@@ -73,6 +74,9 @@ public class Welcome implements Listener {
 		}else{
 			damageMap.dmg.remove(player);
 		}
+		
+		long conTime = System.currentTimeMillis();
+		timePlayedMap.tpl.put(player, conTime);
 	}
 	
 }

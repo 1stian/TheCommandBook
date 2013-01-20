@@ -22,9 +22,7 @@ public class playerConfig {
         public static File customConfigFile = null;
        
         public static void reloadPlayerConfig(String player) {
-                if (customConfigFile == null) {
-                        customConfigFile = new File(TheCommandBook.pluginST.getDataFolder() + "/playerdata/" + player + ".yml");
-                }
+                customConfigFile = new File(TheCommandBook.pluginST.getDataFolder() + "/playerdata/" + player + ".yml");
                 customConfig = YamlConfiguration.loadConfiguration(customConfigFile);
                
                 InputStream defConfigStream = TheCommandBook.pluginST.getResource("/playerdata/" + player + ".yml");
@@ -35,9 +33,7 @@ public class playerConfig {
         }
        
         public static FileConfiguration getPlayerConfig(String player) {
-                if (customConfig == null) {
-                        reloadPlayerConfig(player);
-                }
+                reloadPlayerConfig(player);
                 return customConfig;
         }
        

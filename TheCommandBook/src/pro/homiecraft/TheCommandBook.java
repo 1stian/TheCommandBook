@@ -53,6 +53,7 @@ public class TheCommandBook extends JavaPlugin{
 		this.getCommand("weather").setExecutor(new tcbWeather());
 		this.getCommand("gm").setExecutor(new tcbGm());
 		this.getCommand("god").setExecutor(new tcbGod());
+		this.getCommand("played").setExecutor(new tcbPlayed());
 	}
 	
 	public void loadConfiguration() {

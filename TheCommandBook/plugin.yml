@@ -85,3 +85,7 @@ commands:
       description: God a player
       permission: tcb.god
       usage: /god <playerName>
+   played:
+      description: Lookup playtime for a player
+      permission: tcb.played
+      usage: /played <playerName>
