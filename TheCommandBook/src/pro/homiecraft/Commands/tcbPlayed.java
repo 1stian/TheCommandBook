@@ -30,11 +30,18 @@ public class tcbPlayed implements CommandExecutor {
 				
 				File playerfile = new File(TheCommandBook.pluginST.getDataFolder() + "/playerdata/" + target.getName() + ".yml");
 				if(playerfile.exists()){
-					playerConfig.reloadPlayerConfig(target.getName());
-					long timePlayed = playerConfig.getPlayerConfig(target.getName().trim()).getLong("TimePlayed");
-					//playerConfig.savePlayerConfig(target.getName());
-					player.sendMessage(target.getName() + " has played for " + convertMillis(timePlayed));
-					return true;
+					if (args.length < 1){
+						sender.sendMessage("Missing the playerName!");
+						sender.sendMessage("Usage: /played playerName");
+					}else if(args.length > 1){
+						sender.sendMessage("To many arguments!");
+						sender.sendMessage("Usage: /played playerName");
+					}else{
+						playerConfig.reloadPlayerConfig(target.getName());
+						long timePlayed = playerConfig.getPlayerConfig(target.getName().trim()).getLong("TimePlayed");
+						player.sendMessage(target.getName() + " has played for " + convertMillis(timePlayed));
+						return true;
+					}
 				}else{
 					player.sendMessage("Can't locate playerfile");
 					return true;
