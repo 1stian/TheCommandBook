@@ -24,6 +24,7 @@ public class TheCommandBook extends JavaPlugin{
 			pm.registerEvents(new Welcome(), this);
 			pm.registerEvents(new Chat(), this);
 			pm.registerEvents(new Damage(), this);
+			pm.registerEvents(new PlayerLeave(), this);
 			
 		TheCommandBook.pluginST = this;
 		

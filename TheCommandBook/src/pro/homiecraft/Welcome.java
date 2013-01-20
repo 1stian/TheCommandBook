@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import pro.homiecraft.Commands.Resources.damageMap;
 import pro.homiecraft.Commands.Resources.muteMap;
 import pro.homiecraft.Config.playerConfig;
 
@@ -58,14 +59,20 @@ public class Welcome implements Listener {
 		}
 		
 		playerConfig.reloadPlayerConfig(player.getName());
-		Boolean muted = playerConfig.getPlayerConfig(player.getName()).getBoolean("muted", false);
 		
+		Boolean muted = playerConfig.getPlayerConfig(player.getName()).getBoolean("muted", false);
 		if (muted == true){
 			muteMap.mu.put(player, "mute");
 		}else{
 			muteMap.mu.remove(player);
 		}
 		
+		Boolean god = playerConfig.getPlayerConfig(player.getName()).getBoolean("god", false);
+		if(god == true){
+			damageMap.dmg.put(player, true);
+		}else{
+			damageMap.dmg.remove(player);
+		}
 	}
 	
 }
