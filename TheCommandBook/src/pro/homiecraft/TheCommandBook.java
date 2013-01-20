@@ -38,6 +38,7 @@ public class TheCommandBook extends JavaPlugin{
 		this.getCommand("sethome").setExecutor(new tcbSethome());
 		this.getCommand("home").setExecutor(new tcbHome());
 		this.getCommand("tp").setExecutor(new tcbTp());
+		this.getCommand("tpl").setExecutor(new tcbTpl());
 		this.getCommand("tphere").setExecutor(new tcbTphere());
 		this.getCommand("setwarp").setExecutor(new tcbSetwarp());
 		this.getCommand("warp").setExecutor(new tcbWarp());

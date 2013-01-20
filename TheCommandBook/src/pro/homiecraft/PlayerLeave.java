@@ -25,7 +25,7 @@ public class PlayerLeave implements Listener {
 		playerConfig.getPlayerConfig(player.getName()).set("LastLocation.X", x);
 		playerConfig.getPlayerConfig(player.getName()).set("LastLocation.Y", y);
 		playerConfig.getPlayerConfig(player.getName()).set("LastLocation.Z", z);
-		playerConfig.getPlayerConfig(player.getName()).set("LastLocation.Lastseen", lastseen);
+		playerConfig.getPlayerConfig(player.getName()).set("Lastseen", lastseen);
 		playerConfig.savePlayerConfig(player.getName());
 		playerConfig.reloadPlayerConfig(player.getName());
 		

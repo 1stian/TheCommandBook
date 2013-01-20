@@ -25,6 +25,10 @@ commands:
       description: Teleports you to the specified player.
       permission: tcb.tp
       usage: /tp playerName
+   tpl:
+      description: Teleports you to a players last location. Before leaving the server.
+      permission: tcb.tpl
+      usage: /tpl playerName
    tphere:
       description: Teleports a specified player to you.
       permission: tcb.tphere
