@@ -6,6 +6,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import pro.homiecraft.Config.playerConfig;
 
+import pro.homiecraft.Commands.Resources.*;
+
 public class PlayerLeave implements Listener {
 	@EventHandler
 	public void OnPlayerLeave(PlayerQuitEvent event){
@@ -26,5 +28,8 @@ public class PlayerLeave implements Listener {
 		playerConfig.getPlayerConfig(player.getName()).set("LastLocation.Lastseen", lastseen);
 		playerConfig.savePlayerConfig(player.getName());
 		playerConfig.reloadPlayerConfig(player.getName());
+		
+		damageMap.dmg.remove(player);
+		muteMap.mu.remove(player);
 	}
 }
