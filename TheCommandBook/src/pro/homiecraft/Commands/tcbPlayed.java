@@ -13,13 +13,15 @@ import pro.homiecraft.Config.playerConfig;
 
 public class tcbPlayed implements CommandExecutor {
 	public static String convertMillis(long milliseconds){
-		long seconds, minutes, hours;
+		long seconds, minutes, hours, days;
 		   seconds = milliseconds / 1000;
 		   minutes = seconds / 60;
 		   seconds = seconds % 60;
 		   hours = minutes / 60;
 		   minutes = minutes % 60;
-		   return("H:" + hours + " M:" + minutes + " S:" + seconds);
+		   days = hours / 24;
+		   hours = hours % 24;
+		   return("D:"+ days + " H:" + hours + " M:" + minutes + " S:" + seconds);
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
