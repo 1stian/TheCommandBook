@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class tcbTime implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Time") && (sender instanceof Player)){
+		if(sender.hasPermission("tcb.Time")){
 			if(cmd.getName().equalsIgnoreCase("time")){
 				if(args.length < 1) {
 					sender.sendMessage("Missing time!");
@@ -22,11 +22,11 @@ public class tcbTime implements CommandExecutor {
 					
 					if (args[0].equalsIgnoreCase("day")){
 						world.setTime(0);
-						player.sendMessage("Changed time to day");
+						sender.sendMessage("Changed time to day");
 						return true;
 					}else if (args[0].equalsIgnoreCase("night")){
 						world.setTime(16000);
-						player.sendMessage("Changed time to night");
+						sender.sendMessage("Changed time to night");
 						return true;
 					}else{
 						sender.sendMessage("Wrong time argument!");
