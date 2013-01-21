@@ -89,3 +89,7 @@ commands:
       description: Lookup playtime for a player
       permission: tcb.played
       usage: /played <playerName>
+   seen:
+      description: Lookup when the player was last online.
+      permission: tcb.seen
+      usage: /seen <playerName>
