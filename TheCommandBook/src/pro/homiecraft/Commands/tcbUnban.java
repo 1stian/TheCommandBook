@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class tcbUnban implements CommandExecutor {
 	public boolean onCommand (CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Unban")){
+		if(sender.hasPermission("tcb.Unban") && (sender instanceof Player)){
 			if(cmd.getName().equalsIgnoreCase("unban")){
 				if (args.length < 1){
 					sender.sendMessage("Missing the player name.");

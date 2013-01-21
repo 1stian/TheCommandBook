@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class tcbTime implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Time")){
+		if(sender.hasPermission("tcb.Time") && (sender instanceof Player)){
 			if(cmd.getName().equalsIgnoreCase("time")){
 				if(args.length < 1) {
 					sender.sendMessage("Missing time!");

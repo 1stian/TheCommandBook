@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class tcbWeather implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Weather")){
+		if(sender.hasPermission("tcb.Weather") && (sender instanceof Player)){
 			if(cmd.getName().equalsIgnoreCase("weather")){
 				if(args.length < 1) {
 					sender.sendMessage("Missing weather!");

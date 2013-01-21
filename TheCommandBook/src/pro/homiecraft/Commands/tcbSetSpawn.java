@@ -9,7 +9,7 @@ import pro.homiecraft.Config.spawnConfig;
 
 public class tcbSetSpawn implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.Setspawn")) {
+		if (sender.hasPermission("tcb.Setspawn") && (sender instanceof Player)) {
 			if (cmd.getName().equalsIgnoreCase("setspawn")) {
 				Player player = (Player) sender;
 				World world = player.getWorld();

@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class tcbBan implements CommandExecutor {
 	public boolean onCommand (CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Ban")){
+		if(sender.hasPermission("tcb.Ban") && (sender instanceof Player)){
 			if(cmd.getName().equalsIgnoreCase("ban")){
 				if (args.length < 1){
 					sender.sendMessage("Missing the player name.");

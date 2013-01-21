@@ -11,7 +11,7 @@ import pro.homiecraft.Config.playerConfig;
 
 public class tcbHome implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.home")) {
+		if (sender.hasPermission("tcb.home") && (sender instanceof Player)) {
 			if (cmd.getName().equalsIgnoreCase("home")) {
 				Player player = (Player) sender;
 				

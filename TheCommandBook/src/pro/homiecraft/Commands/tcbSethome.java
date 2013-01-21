@@ -8,7 +8,7 @@ import pro.homiecraft.Config.playerConfig;
 
 public class tcbSethome implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.Sethome")) {
+		if (sender.hasPermission("tcb.Sethome") && (sender instanceof Player)) {
 			if (cmd.getName().equalsIgnoreCase("sethome")) {
 				Player player = (Player) sender;
 				

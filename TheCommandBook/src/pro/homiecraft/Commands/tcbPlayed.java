@@ -25,7 +25,7 @@ public class tcbPlayed implements CommandExecutor {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcbPlayed")){
+		if(sender.hasPermission("tcbPlayed") && (sender instanceof Player)){
 			if(cmd.getName().equalsIgnoreCase("played")){
 				Player player = (Player) sender;
 				OfflinePlayer target = player.getServer().getOfflinePlayer(args[0]);

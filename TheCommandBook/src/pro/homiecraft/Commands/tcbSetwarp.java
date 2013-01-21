@@ -12,7 +12,7 @@ import pro.homiecraft.Config.warpConfig;
 
 public class tcbSetwarp implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.Setwarp")) {
+		if (sender.hasPermission("tcb.Setwarp") && (sender instanceof Player)) {
 			if (cmd.getName().equalsIgnoreCase("setwarp")) {
 				if (args.length < 1){
 					sender.sendMessage("Missing warp name!");

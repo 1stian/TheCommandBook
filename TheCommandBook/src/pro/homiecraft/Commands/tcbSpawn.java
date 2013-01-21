@@ -14,7 +14,7 @@ import pro.homiecraft.Config.spawnConfig;
 
 public class tcbSpawn implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.Spawn")) {
+		if (sender.hasPermission("tcb.Spawn") && (sender instanceof Player)) {
 			if (cmd.getName().equalsIgnoreCase("spawn")) {
 				Player player = (Player) sender;
 				

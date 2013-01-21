@@ -10,7 +10,7 @@ import pro.homiecraft.Commands.Resources.muteMap;
 
 public class tcbMute implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Mute")){
+		if(sender.hasPermission("tcb.Mute") && (sender instanceof Player)){
 			Player player = (Player) sender;
 			if(cmd.getName().equalsIgnoreCase("mute")){
 				if(args.length < 1){

@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class tcbTp implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.Tp")){
+		if (sender.hasPermission("tcb.Tp") && (sender instanceof Player)){
 			if (cmd.getName().equalsIgnoreCase("tp")) {
 				if (args.length < 1){
 					sender.sendMessage("Missing the player name.");

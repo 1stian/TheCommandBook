@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class tcbGm implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Gm")){
+		if(sender.hasPermission("tcb.Gm") && (sender instanceof Player)){
 			if(cmd.getName().equalsIgnoreCase("gm")){
 				Player player = (Player) sender;
 				if (args.length > 1){

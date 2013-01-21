@@ -11,7 +11,7 @@ import pro.homiecraft.TheCommandBook;
 
 public class tcbDelwarp implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.delwarp")) {
+		if (sender.hasPermission("tcb.delwarp") && (sender instanceof Player)) {
 			if (cmd.getName().equalsIgnoreCase("delwarp")) {
 				if (args.length < 1){
 					sender.sendMessage("Missing warp name!");

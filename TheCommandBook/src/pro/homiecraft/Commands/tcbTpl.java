@@ -14,7 +14,7 @@ import pro.homiecraft.Config.playerConfig;
 
 public class tcbTpl implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (sender.hasPermission("tcb.Tpl")){
+		if (sender.hasPermission("tcb.Tpl") && (sender instanceof Player)){
 			if (cmd.getName().equalsIgnoreCase("tpl")) {
 				if (args.length < 1){
 					sender.sendMessage("Missing the player name.");
