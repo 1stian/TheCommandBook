@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class tcbGm implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcb.Gm") && (sender instanceof Player)){
+		if(sender.hasPermission("tcb.Gm")){
 			if(cmd.getName().equalsIgnoreCase("gm")){
 				Player player = (Player) sender;
 				if (args.length > 1){
@@ -16,23 +16,28 @@ public class tcbGm implements CommandExecutor {
 					if (target.getGameMode() == GameMode.SURVIVAL){
 						target.setGameMode(GameMode.CREATIVE);
 						target.sendMessage("Your gamemode has been changed to Creative.");
-						player.sendMessage("You changed GameMode for " + target.getName() + " to Creative");
+						sender.sendMessage("You changed GameMode for " + target.getName() + " to Creative");
 						return true;
 					}else if(target.getGameMode() == GameMode.CREATIVE){
 						target.setGameMode(GameMode.SURVIVAL);
 						target.sendMessage("Your gamemode has been changed to Creative.");
-						player.sendMessage("You changed GameMode for " + target.getName() + " to Survival");
+						sender.sendMessage("You changed GameMode for " + target.getName() + " to Survival");
 						return true;
 					}
 				}else{
-					if (player.getGameMode() == GameMode.SURVIVAL){
-						player.setGameMode(GameMode.CREATIVE);
-						player.sendMessage("Your gamemode has been changed to Creative.");
-						return true;
-					}else if(player.getGameMode() == GameMode.CREATIVE){
-						player.setGameMode(GameMode.SURVIVAL);
-						player.sendMessage("Your gamemode has been changed to Survival.");
-						return true;
+					if(sender instanceof Player){
+						if (player.getGameMode() == GameMode.SURVIVAL){
+							player.setGameMode(GameMode.CREATIVE);
+							player.sendMessage("Your gamemode has been changed to Creative.");
+							return true;
+						}else if(player.getGameMode() == GameMode.CREATIVE){
+							player.setGameMode(GameMode.SURVIVAL);
+							player.sendMessage("Your gamemode has been changed to Survival.");
+							return true;
+						}
+					}else{
+						sender.sendMessage("You must be a player to use this.");
+						sender.sendMessage("Use /gm playerName");
 					}
 				}
 			}
