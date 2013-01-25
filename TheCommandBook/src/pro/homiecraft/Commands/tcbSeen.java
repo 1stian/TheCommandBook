@@ -18,12 +18,12 @@ public class tcbSeen implements CommandExecutor {
 	
 	public String convertTime(long time){
 	    Date date = new Date(time);
-	    Format format = new SimpleDateFormat("dd/MM HH:mm:ss");
+	    Format format = new SimpleDateFormat("dd-MM HH:mm:ss");
 	    return format.format(date).toString();
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
-		if(sender.hasPermission("tcbSeen") && (sender instanceof Player)){
+		if(sender.hasPermission("tcbSeen")){
 			if(cmd.getName().equalsIgnoreCase("seen")){
 				Player player = (Player) sender;
 				OfflinePlayer target = player.getServer().getOfflinePlayer(args[0]);
@@ -33,17 +33,19 @@ public class tcbSeen implements CommandExecutor {
 					if (args.length < 1){
 						sender.sendMessage("Missing the playerName!");
 						sender.sendMessage("Usage: /seen playerName");
+						return true;
 					}else if(args.length > 1){
 						sender.sendMessage("To many arguments!");
 						sender.sendMessage("Usage: /seen playerName");
+						return true;
 					}else{
 						playerConfig.reloadPlayerConfig(target.getName());
 						long lastSeen = playerConfig.getPlayerConfig(target.getName().trim()).getLong("LastSeen");
-						player.sendMessage(target.getName() + " was last seen: " + convertTime(lastSeen));
+						sender.sendMessage(target.getName() + " was last seen: " + convertTime(lastSeen));
 						return true;
 					}
 				}else{
-					player.sendMessage("Can't locate playerfile");
+					sender.sendMessage("Can't locate playerfile");
 					return true;
 				}
 			}
