@@ -44,7 +44,7 @@ public class PlayerLeave implements Listener {
 	 	double z = player.getLocation().getZ();
 		
 		long timeAlreadyPlayed = playerConfig.getPlayerConfig(player.getName()).getLong("TimePlayed", 0);
-		long conTime = timePlayedMap.tpl.get(player);
+		long conTime = timePlayedMap.tpl.get(player.getName());
 		long leaveTime = System.currentTimeMillis();
 		
 		long timePlayed = leaveTime - conTime;
@@ -61,6 +61,6 @@ public class PlayerLeave implements Listener {
 		
 		damageMap.dmg.remove(player);
 		muteMap.mu.remove(player);
-		timePlayedMap.tpl.remove(player);
+		timePlayedMap.tpl.remove(player.getName());
 	}
 }

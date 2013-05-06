@@ -76,7 +76,7 @@ public class Welcome implements Listener {
 		}
 		
 		long conTime = System.currentTimeMillis();
-		timePlayedMap.tpl.put(player, conTime);
+		timePlayedMap.tpl.put(player.getName(), conTime);
 	}
 	
 }
